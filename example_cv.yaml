@@ -1,0 +1,31 @@
+---
+name: John Doe
+contact:
+  phone: +00 000 000 000
+  email: john@doe.net
+address:
+  city: London
+  postcode: 00-000
+  street: XYZ 0
+header: I want to work here because I want to be CTO
+experience:
+  - name: Foo Company
+    start_date: 20 May 1999
+    end_date: 19 Jun 2011
+    position: CTO
+    description: Managing IT tech stack
+education:
+  - name: University of Technology
+    start_date: 1980
+    end_date: 1983
+    specialization: IT
+skills:
+  - name: Programming
+    description: I know how to program
+languages:
+  - name: English
+    level: Expert
+certificates:
+  - name: IT Expert
+    when: 20 May 2019
+hobby: ["Watching TV", "IT"]

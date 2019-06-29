@@ -1,0 +1,107 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+    * {
+        margin: 0 auto;
+        padding: 0 auto;
+        font-family: 'Lato', sans-serif;
+    }
+
+    h1 {
+        background-color: orange;
+        color: white;
+        margin-bottom: 10px;
+        padding: 5px 10px 5px 5%;
+    }
+
+    blockquote {
+        margin: 50px 50px;
+        border-left: 5px solid grey;
+        padding: 15px 30px;
+        font-size: 150%;
+        color: grey;
+        font-style: italic;
+    }
+
+    h2 {
+    }
+
+    h3 {
+        display: inline;
+    }
+
+    i {
+        color: grey;
+    }
+
+    i.date {
+        font-size: 85%;
+    }
+
+    .cv {
+        width: 100%;
+        margin-left: 5%;
+    }
+
+    #contact {
+        font-width: 120%;
+    }
+</style>
+<h1>{{.Name}}</h1>
+<div class="cv">
+    <div id="contact">
+        <b>Phone:</b> {{.Contact.Phone}}<br/>
+        <b>Email:</b> {{.Contact.Email}}<br/>
+        <b>Address:</b> {{.Address.Street}}<br/>
+        {{.Address.Postcode}}, {{.Address.City}}
+    </div>
+    <blockquote>{{.Header}}</blockquote>
+
+    <h2>Experience</h2>
+    <ul>
+        {{range .Experience}}
+            <li><h3>{{.Name}}</h3> <i class="date">{{.StartDate}} - {{.EndDate}}</i><br/>
+                Role: <i>{{.Position}}</i> - {{.Description}}</li>
+        {{end}}
+    </ul>
+    <br/><br/>
+
+    <h2>Education</h2>
+    <ul>
+        {{range .Education}}
+            <li><h3>{{.Name}}</h3> <i class="date">{{.StartDate}} - {{.EndDate}}</i><br/>
+                Specialization: <i>{{.Specialization}}</i></li>
+        {{end}}
+    </ul>
+    <br/><br/>
+
+    <h2>Skills</h2>
+    <ul>
+        {{range .Skills}}
+            <li><h3>{{.Name}}</h3><br/>
+                <i>{{.Description}}</i><br/><br/></li>
+        {{end}}
+    </ul>
+    <br/><br/>
+
+    <h2>Languages</h2>
+    <ul>
+        {{range .Languages}}
+        <li><h3>{{.Name}}</h3> - <i>{{.Level}}</i></li>
+        {{end}}<br/><br/>
+    </ul>
+
+    <h2>Certificates</h2>
+    {{range .Certificates}}
+    <ul>
+        <li><h3>{{.Name}}</h3> - <i>{{.When}}</i></li>
+        {{end}}<br/><br/>
+    </ul>
+
+    <h2>Hobby</h2>
+    <ul>
+        {{range .Hobby}}
+        <li>{{.}}</li>
+        {{end}}<br/><br/>
+    </ul>
+</div>
